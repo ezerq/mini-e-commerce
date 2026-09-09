@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-main: "Space Grotesk", Sans;
+
+  --color-primary: var(--color-slate-700);
+  --color-bg: var(--color-slate-200);
+}
+
+@layer components {
+  .icon-btn {
+    @apply cursor-pointer p-2 rounded-full;
+  }
+}
