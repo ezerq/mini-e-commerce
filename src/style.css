@@ -12,3 +12,7 @@
     @apply cursor-pointer p-2 rounded-full;
   }
 }
+
+html {
+  scrollbar-gutter: stable;
+}

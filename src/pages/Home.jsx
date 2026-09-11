@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
-import Navbar from "../components/Navbar";
 
-function Home() {
+function Home({ search }) {
   //
   const [products, setProducts] = useState([]);
 
@@ -19,16 +18,18 @@ function Home() {
     getProducts();
   }, []);
 
-  return (
-    <section className="py-5 px-35 flex flex-col gap-10">
-      <Navbar />
+  const filteredProducts = products.filter((p) => {
+    return p.title.toLowerCase().includes(search.toLowerCase());
+  });
 
+  return (
+    <section className="flex flex-col gap-10">
       <div className="flex justify-center">
         <h1 className="font-bold text-3xl">Product List</h1>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 xl:grid-cols-8">
-        {products.map((p) => (
+      <div className="grid grid-cols-4 gap-4 md:grid-cols-3 xl:grid-cols-8">
+        {filteredProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
       </div>

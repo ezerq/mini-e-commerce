@@ -8,8 +8,15 @@ function ProductCard({ product }) {
   const category =
     product.category[0].toUpperCase() + product.category.slice(1);
 
+  function openProductDetail() {
+    console.log(product.title);
+  }
+
   return (
-    <div className="bg-bg/30 rounded-2xl px-4 py-3 cursor-pointer hover:bg-bg/60">
+    <div
+      onClick={openProductDetail}
+      className="bg-bg/30 rounded-2xl px-4 py-3 cursor-pointer hover:bg-bg/60"
+    >
       <img src={product.thumbnail} alt={product.title} />
 
       <h2 className="truncate font-semibold">{product.title}</h2>
