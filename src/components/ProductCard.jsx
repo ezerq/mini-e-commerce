@@ -1,16 +1,16 @@
 import RatingStars from "./RatingStars";
+import { toTitleCase } from "../utils/helper";
 
 function ProductCard({ product }) {
   //
   const discountPrice =
     product.price - product.price * (product.discountPercentage / 100);
 
-  const category =
-    product.category[0].toUpperCase() + product.category.slice(1);
+  const category = toTitleCase(product.category)
 
-  function openProductDetail() {
-    console.log(product.title);
-  }
+    function openProductDetail() {
+      console.log(product.title);
+    };
 
   return (
     <div

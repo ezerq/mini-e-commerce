@@ -1,26 +1,36 @@
-import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 
-function Home({ search }) {
+function Home({ products, search, category, sortPrice }) {
   //
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function getProducts() {
-      //
-      const response = await fetch("https://dummyjson.com/products");
+  const filteredCategory =
+    category === "all"
+      ? products
+      : products.filter((p) => {
+          return p.category === category;
+        });
 
-      const data = await response.json();
-
-      setProducts(data.products);
-    }
-
-    getProducts();
-  }, []);
-
-  const filteredProducts = products.filter((p) => {
+  const seacrhedProducts = filteredCategory.filter((p) => {
     return p.title.toLowerCase().includes(search.toLowerCase());
   });
+
+  function getSortedPrice(sort) {
+    switch (sort) {
+      case "":
+        return seacrhedProducts;
+
+      case "expensive":
+        return [...seacrhedProducts].sort((a, b) => b.price - a.price);
+
+      case "cheap":
+        return [...seacrhedProducts].sort((a, b) => a.price - b.price);
+
+      default:
+        break;
+    }
+  }
+
+  const sortedPriceProducts = getSortedPrice(sortPrice);
 
   return (
     <section className="flex flex-col gap-10">
@@ -29,7 +39,7 @@ function Home({ search }) {
       </div>
 
       <div className="grid grid-cols-4 gap-4 md:grid-cols-3 xl:grid-cols-8">
-        {filteredProducts.map((p) => (
+        {sortedPriceProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
       </div>

@@ -9,7 +9,19 @@
 
 @layer components {
   .icon-btn {
-    @apply cursor-pointer p-2 rounded-full;
+    @apply cursor-pointer p-2 rounded-full hover:bg-primary/10;
+  }
+
+  .btn-category {
+    @apply cursor-pointer text-sm text-primary/50 bg-bg/60 px-2 py-0.5 rounded-lg hover:bg-primary/10;
+  }
+
+  .btn-category.active {
+    @apply bg-blue-200 text-blue-900/80 hover:bg-blue-300/70;
+  }
+
+  .filter-icon {
+    @apply cursor-pointer px-2 py-0.5 hover:bg-primary/10 flex items-center gap-1;
   }
 }
 
