@@ -5,4 +5,8 @@ function toTitleCase(text) {
     .join(" ");
 }
 
-export { toTitleCase };
+function getDiscount(price, discount) {
+  return price - price * (discount / 100);
+}
+
+export { toTitleCase, getDiscount };

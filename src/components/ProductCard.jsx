@@ -1,16 +1,13 @@
 import RatingStars from "./RatingStars";
-import { toTitleCase } from "../utils/helper";
+import { toTitleCase, getDiscount } from "../utils/helper";
 
 function ProductCard({ product }) {
   //
-  const discountPrice =
-    product.price - product.price * (product.discountPercentage / 100);
+  const category = toTitleCase(product.category);
 
-  const category = toTitleCase(product.category)
-
-    function openProductDetail() {
-      console.log(product.title);
-    };
+  function openProductDetail() {
+    console.log(product.title);
+  }
 
   return (
     <div
@@ -31,7 +28,9 @@ function ProductCard({ product }) {
       </div>
 
       <div className="flex items-end gap-1">
-        <p className="font-bold text-xl">${discountPrice.toFixed(2)}</p>
+        <p className="font-bold text-xl">
+          ${getDiscount(product.price, product.discountPercentage).toFixed(2)}
+        </p>
         <p className="text-primary/50 text-sm line-through">${product.price}</p>
       </div>
     </div>

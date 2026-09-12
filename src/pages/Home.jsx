@@ -1,4 +1,5 @@
 import ProductCard from "../components/ProductCard";
+import { getDiscount } from "../utils/helper";
 
 function Home({ products, search, category, sortPrice }) {
   //
@@ -16,14 +17,22 @@ function Home({ products, search, category, sortPrice }) {
 
   function getSortedPrice(sort) {
     switch (sort) {
-      case "":
+      case null:
         return seacrhedProducts;
 
       case "expensive":
-        return [...seacrhedProducts].sort((a, b) => b.price - a.price);
+        return [...seacrhedProducts].sort(
+          (a, b) =>
+            getDiscount(b.price, b.discountPercentage) -
+            getDiscount(a.price, a.discountPercentage),
+        );
 
       case "cheap":
-        return [...seacrhedProducts].sort((a, b) => a.price - b.price);
+        return [...seacrhedProducts].sort(
+          (a, b) =>
+            getDiscount(a.price, a.discountPercentage) -
+            getDiscount(b.price, b.discountPercentage),
+        );
 
       default:
         break;

@@ -21,7 +21,7 @@ function App() {
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
-  const [sortPrice, setSortPrice] = useState("");
+  const [sortPrice, setSortPrice] = useState(null);
 
   return (
     <main className="py-5 px-35 flex flex-col gap-10">

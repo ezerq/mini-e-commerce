@@ -4,9 +4,14 @@ import FilterBar from "./FilterBar";
 function Navbar({
   products,
   setProducts,
+  //
+  search,
   setSearch,
+  //
   category,
   setCategory,
+  //
+  sortPrice,
   setSortPrice,
 }) {
   return (
@@ -15,7 +20,7 @@ function Navbar({
         <h1 className="text-xl font-black cursor-pointer">MiniBuy</h1>
 
         <div className="flex items-center gap-2 text-lg">
-          <SearchBar setSearch={setSearch} />
+          <SearchBar search={search} setSearch={setSearch} />
 
           <button className="mso icon-btn">favorite</button>
           <button className="mso icon-btn">shopping_cart</button>
@@ -25,8 +30,11 @@ function Navbar({
       <FilterBar
         products={products}
         setProducts={setProducts}
+        //
         category={category}
-        setCategory={setCategory}
+        onCategoryChange={setCategory}
+        //
+        sortPrice={sortPrice}
         setSortPrice={setSortPrice}
       />
     </div>
