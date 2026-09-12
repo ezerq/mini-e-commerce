@@ -32,6 +32,18 @@
   .transition-grid-rows {
     @apply transition-[grid-template-rows] duration-300;
   }
+
+  .path {
+    @apply cursor-pointer hover:text-primary;
+  }
+
+  .path-arrow {
+    @apply cursor-default;
+  }
+
+  .divider {
+    @apply w-full h-[1px] bg-primary/10 my-3;
+  }
 }
 
 html {

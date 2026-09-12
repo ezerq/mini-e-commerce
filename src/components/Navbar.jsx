@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
 
@@ -17,7 +19,9 @@ function Navbar({
   return (
     <div className="flex flex-col gap-2">
       <nav className="w-full bg-bg/60 rounded-lg px-8 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-black cursor-pointer">MiniBuy</h1>
+        <Link to="/">
+          <h1 className="text-xl font-black cursor-pointer">MiniBuy</h1>
+        </Link>
 
         <div className="flex items-center gap-2 text-lg">
           <SearchBar search={search} setSearch={setSearch} />

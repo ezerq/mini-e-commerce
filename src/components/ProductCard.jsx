@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import RatingStars from "./RatingStars";
 import { toTitleCase, getDiscount } from "../utils/helper";
 
@@ -5,13 +7,9 @@ function ProductCard({ product }) {
   //
   const category = toTitleCase(product.category);
 
-  function openProductDetail() {
-    console.log(product.title);
-  }
-
   return (
-    <div
-      onClick={openProductDetail}
+    <Link
+      to={`/product/${product.id}`}
       className="bg-bg/30 rounded-2xl px-4 py-3 cursor-pointer hover:bg-bg/60"
     >
       <img src={product.thumbnail} alt={product.title} />
@@ -29,11 +27,11 @@ function ProductCard({ product }) {
 
       <div className="flex items-end gap-1">
         <p className="font-bold text-xl">
-          ${getDiscount(product.price, product.discountPercentage).toFixed(2)}
+          ${getDiscount(product.price, product.discountPercentage)}
         </p>
         <p className="text-primary/50 text-sm line-through">${product.price}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

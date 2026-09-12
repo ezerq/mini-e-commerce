@@ -67,6 +67,7 @@ function FilterBar({
           <div className="p-3 min-h-0 w-full bg-bg/40 rounded-lg flex gap-1">
             {categories.map((c) => (
               <button
+                key={c}
                 className={`btn-category h-fit ${c === category ? "active" : ""}`}
                 onClick={() => onCategoryChange(`${c}`)}
               >

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
+import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -38,12 +41,25 @@ function App() {
         products={products}
         setProducts={setProducts}
       />
-      <Home
-        products={products}
-        search={search}
-        category={category}
-        sortPrice={sortPrice}
-      />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              products={products}
+              search={search}
+              category={category}
+              sortPrice={sortPrice}
+            />
+          }
+        />
+
+        <Route
+          path="/product/:id"
+          element={<ProductDetail products={products} />}
+        />
+      </Routes>
     </main>
   );
 }
