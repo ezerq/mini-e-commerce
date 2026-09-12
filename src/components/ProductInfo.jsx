@@ -20,7 +20,10 @@ function ProductInfo({ product }) {
 
         <div className="flex gap-1">
           {product.tags.map((t) => (
-            <p className="text-xs border border-primary/10 text-primary/70 py-0.5 px-3.5 rounded-full">
+            <p
+              key={t}
+              className="text-xs border border-primary/10 text-primary/70 py-0.5 px-3.5 rounded-full"
+            >
               {toTitleCase(t)}
             </p>
           ))}
@@ -57,7 +60,7 @@ function ProductInfo({ product }) {
 
         <div className="divider"></div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <button className="flex flex-1 items-center justify-center gap-1 cursor-pointer hover:bg-blue-500/85 w-full bg-blue-500/70 py-2 rounded-lg text-bg text-sm">
             <span className="mso">shopping_cart</span>
             Add to Cart

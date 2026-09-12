@@ -11,8 +11,6 @@ function RatingStars({ rating }) {
 
   if (hasHalf) {
     stars.push(<span className="mso-fill">star_rate</span>);
-  } else {
-    stars.push(<span className="mso-fill text-slate-300">star_rate</span>);
   }
 
   const emptyStar = 5 - stars.length;
@@ -21,7 +19,7 @@ function RatingStars({ rating }) {
     stars.push(<span className="mso-fill text-slate-300">star_rate</span>);
   }
 
-  return <div className="text-amber-300">{stars}</div>;
+  return <div className="text-amber-400">{stars}</div>;
 }
 
 export default RatingStars;
