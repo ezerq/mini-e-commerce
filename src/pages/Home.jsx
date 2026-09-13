@@ -1,5 +1,7 @@
 import ProductCard from "../components/ProductCard";
+import BannerCarousel from "../components/BannerCarousel";
 import { getDiscount } from "../utils/helper";
+import { heroBanners } from "../datas/heroBanners";
 
 function Home({ products, search, category, sortPrice }) {
   //
@@ -43,6 +45,8 @@ function Home({ products, search, category, sortPrice }) {
 
   return (
     <section className="flex flex-col gap-10">
+      <BannerCarousel banners={heroBanners} />
+
       <div className="flex justify-center">
         <h1 className="font-bold text-3xl">Product List</h1>
       </div>

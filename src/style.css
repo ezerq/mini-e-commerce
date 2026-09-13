@@ -44,6 +44,12 @@
   .divider {
     @apply w-full h-[1px] bg-primary/10 my-3;
   }
+
+  .banner-btn {
+    @apply cursor-pointer absolute opacity-0 top-0 bottom-0 min-w-15 text-black;
+    @apply hover:from-black/0 hover:to-black/20 hover:opacity-100;
+    @apply transition-all duration-150 ease-in-out;
+  }
 }
 
 html {

@@ -27,39 +27,31 @@ function App() {
   const [sortPrice, setSortPrice] = useState(null);
 
   return (
-    <main className="py-5 px-35 flex flex-col gap-10">
-      <Navbar
-        search={search}
-        setSearch={setSearch}
-        //
-        category={category}
-        setCategory={setCategory}
-        //
-        sortPrice={sortPrice}
-        setSortPrice={setSortPrice}
-        //
-        products={products}
-        setProducts={setProducts}
-      />
+    <main className="flex flex-col">
+      <Navbar search={search} setSearch={setSearch} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              products={products}
-              search={search}
-              category={category}
-              sortPrice={sortPrice}
-            />
-          }
-        />
+      <section className="flex flex-col gap-10">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                products={products}
+                search={search}
+                category={category}
+                setCategory={setCategory}
+                sortPrice={sortPrice}
+                setSortPrice={setSortPrice}
+              />
+            }
+          />
 
-        <Route
-          path="/product/:id"
-          element={<ProductDetail products={products} />}
-        />
-      </Routes>
+          <Route
+            path="/product/:id"
+            element={<ProductDetail products={products} />}
+          />
+        </Routes>
+      </section>
     </main>
   );
 }

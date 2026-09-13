@@ -1,12 +1,12 @@
 function SearchBar({ search, setSearch }) {
   return (
     <div className="flex border border-primary/20 overflow-hidden items-center rounded-full">
-      <div className="relative">
+      <div className="relative min-w-100">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           type="text"
-          className="text-sm min-w-50 px-3 placeholder:text-primary/50 outline-none"
+          className="text-sm w-full  px-3 placeholder:text-primary/50 outline-none"
           placeholder="Search products..."
         />
         <button

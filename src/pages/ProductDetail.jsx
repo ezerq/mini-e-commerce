@@ -6,22 +6,11 @@ import ProductInfo from "../components/ProductInfo";
 import Accordion from "../components/Accordion";
 import Rating from "../components/Rating";
 import ReviewCard from "../components/ReviewCard";
-import { useRef } from "react";
 
 function ProductDetail({ products }) {
   const { id } = useParams();
 
-  const sliderRef = useRef(null);
-
   const product = products.find((p) => p.id === Number(id));
-
-  const handleWheel = (e) => {
-    if (e.deltaY !== 0) {
-      e.preventDefault();
-
-      sliderRef.current.scrollLeft += e.deltaY;
-    }
-  };
 
   if (!product) {
     return <p>Loading...</p>;
@@ -66,11 +55,7 @@ function ProductDetail({ products }) {
 
         <Rating product={product} />
 
-        <div
-          ref={sliderRef}
-          onWheel={handleWheel}
-          className="col-span-2 overflow-x-auto h-full scroll-smooth scrollbar-hide"
-        >
+        <div className="col-span-2 overflow-x-auto h-full scroll-smooth scrollbar-hide">
           <div className="flex gap-2 h-full">
             {product.reviews.map((review) => (
               <ReviewCard review={review} />

@@ -1,0 +1,108 @@
+{
+  "banner_type": "desktop",
+
+  "canvas_size": {
+    "desktop": "1920x700 px",
+    "mobile": "390x600 px"
+  },
+
+  "design_style": {
+    "category": "premium modern e-commerce hero banner",
+
+    "visual_direction": [
+      "clean luxury composition",
+      "minimal professional advertising layout",
+      "high-end brand campaign style",
+      "soft realistic lighting",
+      "premium product photography",
+      "balanced whitespace",
+      "editorial fashion advertising aesthetic"
+    ],
+
+    "layout": {
+      "desktop": {
+        "text_area": "left side with large clean empty space",
+        "product_position": "right side",
+        "model_position": "right or center-right",
+        "visual_focus": "product and model as the main attraction",
+        "composition": "horizontal hero banner"
+      },
+
+      "mobile": {
+        "text_area": "top section with clean readable space",
+        "product_position": "bottom or center",
+        "model_position": "center",
+        "visual_focus": "large product-focused composition",
+        "composition": "vertical hero banner"
+      }
+    },
+
+    "text_area": {
+      "placement": "left side",
+      "style": "minimal, elegant, and clean",
+      "purpose": "reserved for headline, subheadline, CTA buttons",
+      "background_requirement": "simple background with enough contrast for text readability",
+      "avoid": [
+        "busy background",
+        "objects behind text",
+        "complex patterns",
+        "visual elements covering text area"
+      ]
+    },
+
+    "visual_area": {
+      "placement": "right side",
+      "purpose": "showcase product and model in a premium commercial scene",
+      "style": [
+        "realistic product photography",
+        "luxury campaign composition",
+        "cinematic product placement",
+        "natural interaction between model and product"
+      ]
+    },
+
+    "visual_quality": {
+      "style": "realistic commercial photography",
+      "resolution": "high resolution",
+      "lighting": "professional studio lighting",
+      "detail": "sharp product focus with premium texture"
+    }
+  },
+
+  "product": {
+    "name": "ice cream magnum almond",
+    "description": "Creamy and delicious ice cream, available in various flavors for a delightful treat.
+",
+    "main_color": "almond",
+    "product_reference": ""
+  },
+
+  "model": {
+    "include_model": true,
+    "appearance": "happy and joy child",
+    "action": "holding and focus to the ice cream",
+    "relationship_with_product": ""
+  },
+
+  "background": {
+    "theme": "",
+    "color_palette": "",
+    "mood": "joyfull"
+  },
+
+  "copy_space": {
+    "headline": "",
+    "subheadline": "",
+    "primary_cta": "",
+    "secondary_cta": ""
+  },
+
+  "additional_instruction": [
+    "Keep left side clean for text placement",
+    "Do not add any text into image",
+    "Do not create fake logos",
+    "Do not place important visual elements on the left side",
+    "Focus on premium commercial banner appearance",
+    "Make the product and model the hero visual on the right side"
+  ]
+}
