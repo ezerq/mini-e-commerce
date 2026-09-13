@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
+import NavbarUpper from "./components/NavbarUpper";
 
 function App() {
   //
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <main className="flex flex-col">
+      <NavbarUpper />
       <Navbar search={search} setSearch={setSearch} />
 
       <section className="flex flex-col gap-10">

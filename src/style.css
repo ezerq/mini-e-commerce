@@ -50,6 +50,11 @@
     @apply hover:from-black/0 hover:to-black/20 hover:opacity-100;
     @apply transition-all duration-150 ease-in-out;
   }
+
+  .card-color {
+    @apply bg-bg/30 rounded-lg cursor-pointer border border-bg;
+    @apply hover:bg-bg/50;
+  }
 }
 
 html {

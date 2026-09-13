@@ -8,11 +8,10 @@ function ProductCard({ product }) {
   const category = toTitleCase(product.category);
 
   return (
-    <Link
-      to={`/product/${product.id}`}
-      className="bg-bg/30 rounded-2xl px-4 py-3 cursor-pointer hover:bg-bg/60"
-    >
-      <img src={product.thumbnail} alt={product.title} />
+    <Link to={`/product/${product.id}`} className="card-color px-4 py-3 ">
+      <div className="h-41">
+        <img src={product.thumbnail} alt={product.title} />
+      </div>
 
       <h2 className="truncate font-semibold">{product.title}</h2>
 
@@ -20,16 +19,16 @@ function ProductCard({ product }) {
         {category}
       </p>
 
-      <div className="flex items-center gap-1 text-sm text-primary/50">
-        <RatingStars rating={product.rating} />
-        <p>{product.rating}</p>
-      </div>
-
-      <div className="flex items-end gap-1">
+      <div className="flex items-end gap-1 mt-1.5">
         <p className="font-bold text-xl">
           ${getDiscount(product.price, product.discountPercentage)}
         </p>
         <p className="text-primary/50 text-sm line-through">${product.price}</p>
+      </div>
+
+      <div className="flex items-center gap-1 text-sm text-primary/50">
+        <RatingStars rating={product.rating} />
+        <p>{product.rating}</p>
       </div>
     </Link>
   );
